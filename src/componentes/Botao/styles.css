@@ -5,11 +5,15 @@
     font-size: 18px;
     padding: 32px;
     border: none;
+    border: solid;
+    border-width: 3px;
+    border-color: #6278F7;
     cursor: pointer;
     color: #FFF;
     margin: 32px 0;
 }
 
 .botao:hover {
-    color: #95FFD4;
+    color: #6278F7;
+    background-color: #FFF;
 } 
