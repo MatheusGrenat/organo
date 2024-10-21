@@ -3,7 +3,7 @@ import Botao from '../Botao'
 import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa'
 import './styles.css'
-const Formulario = () => {
+const Formulario = (props) => {
     
     const times = [
         '',
@@ -16,6 +16,8 @@ const Formulario = () => {
         'Inovação e Gestão'
     ]
 
+
+
     const[nome, setNome] = useState('')
     const[cargo, setCargo] = useState('')
     const[imagem, setImagem] = useState('')
@@ -24,7 +26,12 @@ const Formulario = () => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        console.log('form foi submetido => ', nome, cargo, imagem, time)
+        props.aoColoboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time
+        })
     }
 
     return(
@@ -56,7 +63,6 @@ const Formulario = () => {
                     itens={times}
                     valor={time}
                     aoAlterado={valor => setTime(valor)}
-
                 /> 
                 <Botao>
                     Criar Card    
